@@ -15,7 +15,7 @@ const Apps = () => {
                 <PropagateLoader color="#AD46FF"></PropagateLoader>
             </div>)
             : 
-            (<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+            (<div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mb-10">
                 {
                     apps.map(app=>{
                         return (

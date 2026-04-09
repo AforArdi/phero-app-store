@@ -26,7 +26,7 @@ const TrendingApps = () => {
                 }
             </div>}
             <div className="flex justify-center">
-                <Link to={'/apps'} className="btn bg-purple-500 text-white">View All</Link>
+                <Link to={'/apps'} className="btn bg-purple-500 text-white mb-10">View All</Link>
             </div>
         </div>
      );
