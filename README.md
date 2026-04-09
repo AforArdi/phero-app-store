@@ -1,16 +1,57 @@
-# React + Vite
+# Phero App Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, feature-rich app store application built with React and Vite. Browse, view details, and manage your favorite applications with an intuitive and responsive user interface.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Home Page**: Display trending apps with banner, statistics, and featured applications
+- **App Browsing**: Browse a comprehensive catalog of applications
+- **App Details**: View detailed information about each app including:
+  - App description and company information
+  - User ratings and reviews
+  - Download statistics
+  - App size and installation options
+  - Visual rating charts
+- **Install/Uninstall**: Install apps to your collection and uninstall them easily
+- **Installed Apps Dashboard**: Manage all your installed applications in one place
+- **Responsive Design**: Fully responsive UI that works seamlessly across devices
+- **Toast Notifications**: Real-time feedback for user actions using react-toastify
+- **Charts & Analytics**: Visual representation of app ratings and statistics
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Framework**: React 19.2.4
+- **Build Tool**: Vite 8.0.4
+- **Styling**: 
+  - Tailwind CSS 4.2.2
+  - DaisyUI 5.5.19 (Tailwind CSS component library)
+- **Routing**: React Router 7.14.0
+- **Charts**: Recharts 3.8.1
+- **Icons**: React Icons 5.6.0
+- **Notifications**: React Toastify 11.0.5
+- **Loading Spinners**: React Spinners 0.17.0
+- **Linting**: ESLint 9.39.4
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔄 State Management
+
+- **Context API**: Global app installation state managed through `AppInstallContext`
+- **Local State**: Component-level state with React hooks
+
+## 📱 Pages & Routes
+
+| Page | Route | Description |
+|------|-------|-------------|
+| Home | `/` | Landing page with trending apps and statistics |
+| Apps | `/apps` | Complete app catalog with browsing capabilities |
+| App Details | `/apps/:id` | Detailed view of individual apps with ratings and charts |
+| Installed Apps | `/installed-apps` | Manage installed applications |
+| 404 Not Found | Any undefined route | Error page for invalid routes |
+
+## 🤝 Connect With Me
+
+I'd love to connect with you! Feel free to reach out on LinkedIn:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohammad-ardi/)
+
+
