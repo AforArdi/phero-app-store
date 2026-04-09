@@ -1,20 +1,23 @@
 import { useParams } from "react-router";
 import useAppsData from "../../hooks/useAppsData";
 import { PropagateLoader } from "react-spinners";
-import { useState } from "react";
+import { useContext } from "react";
+import { AppInstallContext } from "../../components/context/AppInstallContext";
 
 const AppDetails = () => {
     const {apps, loading} = useAppsData();
     const {id} = useParams();
     const expectedApp = apps.find(app=> app.id == id);
 
-    const [installed, setInstalled] = useState([]);
+    const {setInstalled} = useContext(AppInstallContext);
+
     const handleInstalled=()=>{
         setInstalled(prev=>([
             ...prev,
             expectedApp
         ]));
     }
+
     return ( 
         <div className="card w-96 bg-base-100 card-xs shadow-sm">
             {loading ? 
