@@ -9,13 +9,13 @@ export const route = createBrowserRouter([
         path: '/',
         Component: RootLayout,
         children: [
-            {path: true, Component: Home},
+            {index: true, Component: Home},
             {
                 path: 'apps',
                 Component: Apps
             },
             {
-                path: 'installedApps',
+                path: 'installed-apps',
                 Component: InstalledApps
             }
         ]
