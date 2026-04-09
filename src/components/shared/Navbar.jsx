@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router';
 import navImg from '../../assets/images/logo.png'
 import { FaGithub } from 'react-icons/fa';
 import MyNavLinks from './MyNavLinks';
