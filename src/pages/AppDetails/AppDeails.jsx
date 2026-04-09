@@ -3,19 +3,26 @@ import useAppsData from "../../hooks/useAppsData";
 import { PropagateLoader } from "react-spinners";
 import { useContext } from "react";
 import { AppInstallContext } from "../../components/context/AppInstallContext";
+import { toast } from "react-toastify";
 
 const AppDetails = () => {
     const {apps, loading} = useAppsData();
     const {id} = useParams();
     const expectedApp = apps.find(app=> app.id == id);
 
-    const {setInstalled} = useContext(AppInstallContext);
+    const {installed, setInstalled} = useContext(AppInstallContext);
 
     const handleInstalled=()=>{
-        setInstalled(prev=>([
-            ...prev,
-            expectedApp
-        ]));
+        const appExist = installed.find(app=> app.id == expectedApp.id);
+        if(!appExist){
+            setInstalled(prev=>([
+                ...prev,
+                expectedApp
+            ]));
+            toast.success(`Installed ${expectedApp.title}!`);
+        } else{
+            toast.error(`${expectedApp.title} Already installed`);
+        }
     }
 
     return ( 
