@@ -20,8 +20,8 @@ const navItems = [
 
 const Navbar = () => {
     return (
-        <div className='container mx-auto mt-4'>
-            <nav className='flex justify-between items-center'>
+        <div className='shadow'>
+            <nav className='flex justify-between items-center container mx-auto p-3'>
                 <img src={navImg} alt=""
                     className='h-10 w-auto'
                 />
