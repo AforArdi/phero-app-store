@@ -4,6 +4,10 @@ import { PropagateLoader } from "react-spinners";
 import { useContext } from "react";
 import { AppInstallContext } from "../../components/context/AppInstallContext";
 import { toast } from "react-toastify";
+import downloadIcon from '../../assets/images/icon-downloads.png'
+import ratingIcon from '../../assets/images/icon-ratings.png'
+import reviewIcon from '../../assets/images/icon-review.png'
+import ChartRating from "../../ui/ChartRating";
 
 const AppDetails = () => {
     const {apps, loading} = useAppsData();
@@ -26,23 +30,67 @@ const AppDetails = () => {
     }
 
     return ( 
-        <div className="card w-96 bg-base-100 card-xs shadow-sm">
+        <div className="bg-base-100">
             {loading ? 
             <div className="flex justify-center">
                 <PropagateLoader color="#AD46FF"></PropagateLoader>
             </div>
             :
-            <div className="card-body">
-                <div className="flex">
-                    <img src={expectedApp.image} alt={expectedApp.title}
-                    className="h-40 w-auto"
-                    />
+            <div className="container mx-auto my-10">
+                {/* top div */}
+                <div className="flex items-center gap-10">
+                    <div className="border ">
+                        <img src={expectedApp.image} alt={expectedApp.title}
+                        className="h-60 w-60"
+                        />
+                    </div>
+
+                    <div className="space-y-3 w-full">
+                        <h2 className="font-bold text-3xl">{expectedApp.title}</h2>
+                        <p className="text-[20px] text-gray-400">Developed By: <span className="text-purple-500">{expectedApp.companyName}</span></p>
+
+                        <div className="divider"></div>
+
+                        <div className="flex items-center gap-5">
+                            <div className="flex flex-col">
+                                <div>
+                                    <img src={downloadIcon} alt="downloads icon" className="h-6" />
+                                </div>
+                                <p className="text-gray-400">Downloads</p>
+                                <p className="text-3xl font-extrabold">{expectedApp.downloads}</p>
+                            </div>
+                            <div className="flex flex-col">
+                                <div>
+                                    <img src={ratingIcon} alt="downloads icon" className="h-6" />
+                                </div>
+                                <p className="text-gray-400">Downloads</p>
+                                <p className="text-3xl font-extrabold">{expectedApp.ratingAvg}</p>
+                            </div>
+                            <div className="flex flex-col">
+                                <div>
+                                    <img src={reviewIcon} alt="downloads icon" className="h-6" />
+                                </div>
+                                <p className="text-gray-400">Downloads</p>
+                                <p className="text-3xl font-extrabold">{expectedApp.reviews}</p>
+                            </div>
+                        </div>
+                        <button onClick={handleInstalled} className="btn bg-purple-500">Install Now {expectedApp.size} MB</button>
+                    </div>
                 </div>
-                <div>
-                    <h2 className="card-title">{expectedApp.title}</h2>
-                    <p className="text-[20px]">Developed By: <span className="text-purple-500">{expectedApp.companyName}</span></p>
+
+                <div className="divider"></div>
+
+                {/* middle ratign div */}
+                <ChartRating expectedApp={expectedApp}></ChartRating>
+
+                <div className="divider"></div>
+
+                {/* bottom description div */}
+
+                <div className="space-y-2">
+                    <h2 className="font-semibold text-2xl">Description</h2>
+                    <p className="text-[20px] text-gray-500">{expectedApp.description}</p>
                 </div>
-                <button onClick={handleInstalled} className="btn bg-purple-500">Install</button>
             </div>
             }
         </div>
